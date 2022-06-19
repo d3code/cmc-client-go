@@ -33,9 +33,6 @@ func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
 		return nil, responseError
 	}
 
-	respBodyString := string(resBody)
-	fmt.Println(respBodyString)
-
 	var cmcResponse ExchangeResponseWrapper
 	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
 	if unmarshalError != nil {
