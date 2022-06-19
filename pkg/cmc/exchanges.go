@@ -46,8 +46,8 @@ func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
 }
 
 type ExchangeResponseWrapper struct {
-	Status map[string]string  `json:"status"`
-	Data   []ExchangeResponse `json:"data"`
+	Status map[string]interface{} `json:"status"`
+	Data   []ExchangeResponse     `json:"data"`
 }
 
 type ExchangeResponse struct {
