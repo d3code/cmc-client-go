@@ -27,8 +27,3 @@ func (c *client) Test(test bool) *client {
 
 	return c
 }
-
-type ResponseWrapper struct {
-	Status map[string]interface{} `json:"status"`
-	Data   interface{}            `json:"data"`
-}

@@ -8,3 +8,8 @@ type ExchangeMapResponse struct {
 	FirstHistoricalData string `json:"first_historical_data"`
 	LastHistoricalData  string `json:"last_historical_data"`
 }
+
+type ExchangeMapResponseWrapper struct {
+	Status map[string]interface{} `json:"status"`
+	Data   []ExchangeMapResponse  `json:"data"`
+}

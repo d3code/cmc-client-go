@@ -2,7 +2,6 @@ package cmc
 
 import (
 	"encoding/json"
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"time"
@@ -17,12 +16,11 @@ func (c *client) ExchangeClient() *exchangeClient {
 	return &exchanges
 }
 
-func (c *exchangeClient) GetExchangeMap() (*ResponseWrapper, error) {
-	requestURL := c.baseURL + "/v1/exchangeClient/map"
+func (c *exchangeClient) GetExchangeMap() (*ExchangeMapResponseWrapper, error) {
+	requestURL := c.baseURL + "/v1/exchange/map"
 
 	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
 	if err != nil {
-		fmt.Printf("Could not create request: %s\n", err)
 		return nil, err
 	}
 
@@ -42,7 +40,7 @@ func (c *exchangeClient) GetExchangeMap() (*ResponseWrapper, error) {
 		return nil, responseError
 	}
 
-	var cmcResponse ResponseWrapper
+	var cmcResponse ExchangeMapResponseWrapper
 	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
 	if unmarshalError != nil {
 		return nil, unmarshalError
