@@ -9,7 +9,7 @@ import (
 )
 
 func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
-	requestURL := c.BaseURL + "/exchange/map"
+	requestURL := c.baseURL + "/exchange/map"
 
 	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
 	if err != nil {
@@ -17,7 +17,7 @@ func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
 		return nil, err
 	}
 
-	req.Header.Set("X-CMC_PRO_API_KEY", c.ApiKey)
+	req.Header.Set("X-CMC_PRO_API_KEY", c.apiKey)
 
 	client := http.Client{
 		Timeout: 30 * time.Second,

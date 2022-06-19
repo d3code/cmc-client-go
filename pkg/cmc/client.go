@@ -1,23 +1,22 @@
 package cmc
 
-const (
-	cmcBaseUrl        = "https://pro-api.coinmarketcap.com/v1"
-	cmcBaseTestnetUrl = "https://pro-api.coinmarketcap.com/v1"
-)
-
 type Client struct {
-	ApiKey  string
-	BaseURL string
+	apiKey  string
+	baseURL string
 }
 
 func NewClient(apiKey string, testnet bool) *Client {
+	cmcBaseUrl := "https://pro-api.coinmarketcap.com/v1"
+	cmcBaseTestnetUrl := "https://sandbox-api.coinmarketcap.com/v1"
+
 	c := &Client{
-		ApiKey:  apiKey,
-		BaseURL: cmcBaseUrl,
+		apiKey:  apiKey,
+		baseURL: cmcBaseUrl,
 	}
 
 	if testnet {
-		c.BaseURL = cmcBaseTestnetUrl
+		c.apiKey = "b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c"
+		c.baseURL = cmcBaseTestnetUrl
 	}
 
 	return c
