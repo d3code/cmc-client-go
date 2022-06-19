@@ -8,8 +8,17 @@ import (
 	"time"
 )
 
-func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
-	requestURL := c.baseURL + "/exchange/map"
+type exchangeClient struct {
+	client
+}
+
+func (c *client) ExchangeClient() *exchangeClient {
+	exchanges := exchangeClient{*c}
+	return &exchanges
+}
+
+func (c *exchangeClient) GetExchangeMap() (*ResponseWrapper, error) {
+	requestURL := c.baseURL + "/v1/exchangeClient/map"
 
 	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
 	if err != nil {
@@ -33,25 +42,11 @@ func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
 		return nil, responseError
 	}
 
-	var cmcResponse ExchangeResponseWrapper
+	var cmcResponse ResponseWrapper
 	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
 	if unmarshalError != nil {
 		return nil, unmarshalError
 	}
 
 	return &cmcResponse, nil
-}
-
-type ExchangeResponseWrapper struct {
-	Status map[string]interface{} `json:"status"`
-	Data   []ExchangeResponse     `json:"data"`
-}
-
-type ExchangeResponse struct {
-	Id                  int    `json:"id"`
-	Name                string `json:"name"`
-	Slug                string `json:"slug"`
-	IsActive            int    `json:"is_active"`
-	FirstHistoricalData string `json:"first_historical_data"`
-	LastHistoricalData  string `json:"last_historical_data"`
 }
