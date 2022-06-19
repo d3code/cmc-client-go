@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func (c *Client) getExchanges() (*ExchangeResponseWrapper, error) {
+func (c *Client) GetExchanges() (*ExchangeResponseWrapper, error) {
 	requestURL := c.BaseURL + "/exchange/map"
 
 	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
