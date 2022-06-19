@@ -2,7 +2,7 @@ package cmc
 
 import "time"
 
-type AirdropResponse struct {
+type CryptocurrencyAirdrop struct {
 	Data struct {
 		Id          string `json:"id"`
 		ProjectName string `json:"project_name"`
@@ -23,7 +23,7 @@ type AirdropResponse struct {
 	Status Status `json:"status"`
 }
 
-type Airdrops struct {
+type CryptocurrencyAirdrops struct {
 	Data []struct {
 		Id          string `json:"id"`
 		ProjectName string `json:"project_name"`
@@ -44,7 +44,7 @@ type Airdrops struct {
 	Status Status `json:"status"`
 }
 
-type Categories struct {
+type CryptocurrencyCategories struct {
 	Data []struct {
 		Id              string  `json:"id"`
 		Name            string  `json:"name"`
@@ -61,7 +61,7 @@ type Categories struct {
 	Status Status `json:"status"`
 }
 
-type Category struct {
+type CryptocurrencyCategory struct {
 	Data struct {
 		Id              string  `json:"id"`
 		Name            string  `json:"name"`

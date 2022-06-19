@@ -2,19 +2,13 @@ package test
 
 import (
 	"fmt"
-	"github.com/d3code/cmc-client-go/pkg/cmc"
 	"net/url"
 	"testing"
 )
 
-var testExchangeClient = cmc.Client("").Test(true).ExchangeClient()
-
 func TestGetExchangeMap(t *testing.T) {
-	response, err := testExchangeClient.GetExchangeMap(url.Values{})
-
-	if err != nil {
-		t.Error(err)
-	}
+	response, err := testClient.GetExchangeMap(url.Values{})
+	checkResponse(t, err, response.Status)
 
 	fmt.Println(response)
 }
@@ -23,11 +17,8 @@ func TestGetExchangeInfo(t *testing.T) {
 	values := url.Values{}
 	values.Add("slug", "eth")
 
-	response, err := testExchangeClient.GetExchangeInfo(values)
-
-	if err != nil {
-		t.Error(err)
-	}
+	response, err := testClient.GetExchangeInfo(values)
+	checkResponse(t, err, response.Status)
 
 	fmt.Println(response)
 }

@@ -2,19 +2,23 @@ package test
 
 import (
 	"fmt"
-	"github.com/d3code/cmc-client-go/pkg/cmc"
 	"net/url"
 	"testing"
 )
 
-var testCryptocurrencyClient = cmc.Client("").Test(true).CryptocurrencyClient()
+func TestGetCryptocurrencyAirdrop(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "60e59b99c8ca1d58514a2322")
+
+	response, err := testClient.GetCryptocurrencyAirdrop(values)
+	checkResponse(t, err, response.Status)
+
+	fmt.Println(response)
+}
 
 func TestGetCryptocurrencyMap(t *testing.T) {
-	response, err := testCryptocurrencyClient.GetCryptocurrencyMap(url.Values{})
-
-	if err != nil {
-		t.Error(err)
-	}
+	response, err := testClient.GetCryptocurrencyMap(url.Values{})
+	checkResponse(t, err, response.Status)
 
 	fmt.Println(response)
 }
