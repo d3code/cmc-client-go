@@ -2,9 +2,7 @@ package cmc
 
 import (
 	"encoding/json"
-	"io/ioutil"
-	"net/http"
-	"time"
+	"net/url"
 )
 
 type exchangeClient struct {
@@ -16,31 +14,33 @@ func (c *client) ExchangeClient() *exchangeClient {
 	return &exchanges
 }
 
-func (c *exchangeClient) GetExchangeMap() (*ExchangeMapResponseWrapper, error) {
+func (c *exchangeClient) GetExchangeMap(q url.Values) (*ExchangeMapResponse, error) {
 	requestURL := c.baseURL + "/v1/exchange/map"
 
-	req, err := http.NewRequest(http.MethodGet, requestURL, nil)
+	resBody, err := doGetRequest(requestURL, q, &c.client)
 	if err != nil {
 		return nil, err
 	}
 
-	req.Header.Set("X-CMC_PRO_API_KEY", c.apiKey)
+	var cmcResponse ExchangeMapResponse
 
-	client := http.Client{
-		Timeout: 30 * time.Second,
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
 	}
 
-	res, requestError := client.Do(req)
-	if requestError != nil {
-		return nil, requestError
-	}
+	return &cmcResponse, nil
+}
 
-	resBody, responseError := ioutil.ReadAll(res.Body)
-	if responseError != nil {
-		return nil, responseError
-	}
+func (c *exchangeClient) GetExchangeInfo(q url.Values) (*ExchangeInfoResponseWrapper, error) {
+	requestURL := c.baseURL + "/v1/exchange/info"
 
-	var cmcResponse ExchangeMapResponseWrapper
+	resBody, err := doGetRequest(requestURL, q, &c.client)
+	if err != nil {
+		return nil, err
+	}
+	var cmcResponse ExchangeInfoResponseWrapper
+
 	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
 	if unmarshalError != nil {
 		return nil, unmarshalError
