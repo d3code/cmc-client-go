@@ -7,7 +7,7 @@ import (
 	"github.com/d3code/cmc-client-go/pkg/cmc"
 )
 
-func TestClient(t *testing.T) {
+func TestGetExchangeMap(t *testing.T) {
 	testExchangeClient := cmc.Client("").Test(true).ExchangeClient()
 	exchanges, err := testExchangeClient.GetExchangeMap()
 

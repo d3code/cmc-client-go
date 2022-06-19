@@ -10,6 +10,6 @@ type ExchangeMapResponse struct {
 }
 
 type ExchangeMapResponseWrapper struct {
-	Status map[string]interface{} `json:"status"`
-	Data   []ExchangeMapResponse  `json:"data"`
+	Status Status                `json:"status"`
+	Data   []ExchangeMapResponse `json:"data"`
 }

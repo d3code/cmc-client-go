@@ -1,5 +1,7 @@
 package cmc
 
+import "time"
+
 const (
 	cmcBaseUrl        = "https://pro-api.coinmarketcap.com"
 	cmcBaseTestnetUrl = "https://sandbox-api.coinmarketcap.com"
@@ -26,4 +28,13 @@ func (c *client) Test(test bool) *client {
 	}
 
 	return c
+}
+
+type Status struct {
+	Timestamp    time.Time `json:"timestamp"`
+	ErrorCode    int       `json:"error_code"`
+	ErrorMessage string    `json:"error_message"`
+	Elapsed      int       `json:"elapsed"`
+	CreditCount  int       `json:"credit_count"`
+	Notice       string    `json:"notice"`
 }
