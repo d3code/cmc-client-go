@@ -36,9 +36,9 @@ func main() {
 
 ### Testing
 
-To use the CMC sandbox environment, call `Test(true)` on the client. This will replace the Client ID and the Base URL for the requests to use the sandbox environment.
+To use the CMC sandbox environment, call `Test(true)` on the client. This will replace the API Key and the Base URL for the requests to use the sandbox environment.
 
-You do not need to provide your Client ID, though this can be provided and calling `Test(false)` will have no effect. This has been done to simplify setting this via config.
+You do not need to provide your API Key, though this can be provided and calling `Test(false)` will revert to using the supplied API Key and the production CMC environment.
 
 ```go
 cmc.Client("").Test(true)
@@ -48,7 +48,7 @@ cmc.Client("").Test(true)
 
 There is no logging in this library, an `error` is returned if there are request / unmarshalling errors and can be handled accordingly.
 
-To output the raw response, call `PrintResponse(true)` on the client.
+To print the raw response, call `PrintResponse(true)` on the client.
 
 ```go
 cmc.Client("").PrintResponse(true)
