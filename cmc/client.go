@@ -13,14 +13,16 @@ const (
 )
 
 type client struct {
-	apiKey  string
-	baseURL string
+	apiKey        string
+	baseURL       string
+	printResponse bool
 }
 
 func Client(apiKey string) *client {
 	c := &client{
-		apiKey:  apiKey,
-		baseURL: cmcBaseUrl,
+		apiKey:        apiKey,
+		baseURL:       cmcBaseUrl,
+		printResponse: false,
 	}
 
 	return c
@@ -30,6 +32,14 @@ func (c *client) Test(test bool) *client {
 	if test {
 		c.apiKey = "b54bcf4d-1bca-4e8e-9a24-22ff2c3d462c"
 		c.baseURL = cmcBaseTestnetUrl
+	}
+
+	return c
+}
+
+func (c *client) PrintResponse(test bool) *client {
+	if test {
+		c.printResponse = true
 	}
 
 	return c
@@ -66,6 +76,11 @@ func doGetRequest(requestURL string, q url.Values, c *client) ([]byte, error) {
 	resBody, responseError := ioutil.ReadAll(res.Body)
 	if responseError != nil {
 		return nil, responseError
+	}
+
+	if c.printResponse {
+		responseString := string(resBody)
+		println(responseString)
 	}
 
 	return resBody, nil

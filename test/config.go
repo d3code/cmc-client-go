@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-var testClient = cmc.Client("").Test(true)
+var testClient = cmc.Client("").Test(true).PrintResponse(true)
 
 func checkResponse(t *testing.T, status cmc.Status) {
 	if status.ErrorCode != 0 {
