@@ -9,6 +9,7 @@ go get github.com/d3code/cmc-client-go
 ```
 
 ### Import
+
 ```go
 import (
     "github.com/d3code/cmc-client-go/cmc"
@@ -23,10 +24,10 @@ To use the client, create a CMC Client
 package main
 
 import (
-	"github.com/d3code/cmc-client-go/cmc"
+    "github.com/d3code/cmc-client-go/cmc"
 )
 
 func main() {
-	client := cmc.Client("<your-api-key>")
+    client := cmc.Client("<your-api-key>")
 }
 ```
