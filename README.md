@@ -1,6 +1,8 @@
-# Coin Market Cap Client
+# CoinMarketCap API Client
 
-A Golang client for the Coin Market Cap API
+A Go client for the [CoinMarketCap API](https://coinmarketcap.com/api/documentation/v1/#section/Quick-Start-Guide)
+
+The CoinMarketCap API is a suite of high-performance RESTful JSON endpoints that are specifically designed to meet the mission-critical demands of application developers, data scientists, and enterprise business platforms.
 
 ### Install
 
@@ -18,7 +20,7 @@ import (
 
 ## Client
 
-To use the client, create a CMC Client
+To use the client, create a CMC Client.
 
 ```go
 package main
@@ -34,7 +36,7 @@ func main() {
 
 ### Testing
 
-To use the CMC testnet, call `Test(true)` on the client. This will replace the Client ID and the Base URL for the requests to use the sandbox API.
+To use the CMC sandbox environment, call `Test(true)` on the client. This will replace the Client ID and the Base URL for the requests to use the sandbox environment.
 
 You do not need to provide your Client ID, though this can be provided and calling `Test(false)` will have no effect. This has been done to simplify setting this via config.
 
@@ -46,7 +48,7 @@ cmc.Client("").Test(true)
 
 There is no logging in this library, an `error` is returned if there are request / unmarshalling errors and can be handled accordingly.
 
-To output the raw response's, call `PrintResponse(true)` on the client.
+To output the raw response, call `PrintResponse(true)` on the client.
 
 ```go
 cmc.Client("").PrintResponse(true)

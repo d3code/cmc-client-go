@@ -6,7 +6,7 @@ import (
 )
 
 func (c *client) GetToolsPriceConversion(q url.Values) (*ToolsPriceConversion, error) {
-	requestURL := c.baseURL + "/v2/tools/price-conversion"
+	requestURL := "/v2/tools/price-conversion"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {

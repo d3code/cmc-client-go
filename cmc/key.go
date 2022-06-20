@@ -6,7 +6,7 @@ import (
 )
 
 func (c *client) GetKeyInfo(q url.Values) (*KeyInfo, error) {
-	requestURL := c.baseURL + "/v1/key/info"
+	requestURL := "/v1/key/info"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {

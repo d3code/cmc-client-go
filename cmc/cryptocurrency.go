@@ -6,7 +6,7 @@ import (
 )
 
 func (c *client) GetCryptocurrencyAirdrop(q url.Values) (*CryptocurrencyAirdrop, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/airdrop"
+	requestURL := "/v1/cryptocurrency/airdrop"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -24,7 +24,7 @@ func (c *client) GetCryptocurrencyAirdrop(q url.Values) (*CryptocurrencyAirdrop,
 }
 
 func (c *client) GetCryptocurrencyAirdrops(q url.Values) (*CryptocurrencyAirdrops, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/airdrops"
+	requestURL := "/v1/cryptocurrency/airdrops"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -42,7 +42,7 @@ func (c *client) GetCryptocurrencyAirdrops(q url.Values) (*CryptocurrencyAirdrop
 }
 
 func (c *client) GetCryptocurrencyCategories(q url.Values) (*CryptocurrencyCategories, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/categories"
+	requestURL := "/v1/cryptocurrency/categories"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -60,7 +60,7 @@ func (c *client) GetCryptocurrencyCategories(q url.Values) (*CryptocurrencyCateg
 }
 
 func (c *client) GetCryptocurrencyCategory(q url.Values) (*CryptocurrencyCategory, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/category"
+	requestURL := "/v1/cryptocurrency/category"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -78,7 +78,7 @@ func (c *client) GetCryptocurrencyCategory(q url.Values) (*CryptocurrencyCategor
 }
 
 func (c *client) GetCryptocurrencyMap(q url.Values) (*CryptocurrencyMap, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/map"
+	requestURL := "/v1/cryptocurrency/map"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -96,7 +96,7 @@ func (c *client) GetCryptocurrencyMap(q url.Values) (*CryptocurrencyMap, error) 
 }
 
 func (c *client) GetCryptocurrencyInfo(q url.Values) (*CryptocurrencyInfo, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/info"
+	requestURL := "/v1/cryptocurrency/info"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -114,7 +114,7 @@ func (c *client) GetCryptocurrencyInfo(q url.Values) (*CryptocurrencyInfo, error
 }
 
 func (c *client) GetCryptocurrencyListingsHistorical(q url.Values) (*CryptocurrencyListingsHistorical, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/listings/historical"
+	requestURL := "/v1/cryptocurrency/listings/historical"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -132,7 +132,7 @@ func (c *client) GetCryptocurrencyListingsHistorical(q url.Values) (*Cryptocurre
 }
 
 func (c *client) GetCryptocurrencyListingsLatest(q url.Values) (*CryptocurrencyListingsLatest, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/listings/latest"
+	requestURL := "/v1/cryptocurrency/listings/latest"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -150,7 +150,7 @@ func (c *client) GetCryptocurrencyListingsLatest(q url.Values) (*CryptocurrencyL
 }
 
 func (c *client) GetCryptocurrencyListingsNew(q url.Values) (*CryptocurrencyListingsNew, error) {
-	requestURL := c.baseURL + "/v1/cryptocurrency/listings/new"
+	requestURL := "/v1/cryptocurrency/listings/new"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {

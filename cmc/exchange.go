@@ -6,7 +6,7 @@ import (
 )
 
 func (c *client) GetExchangeMap(q url.Values) (*ExchangeMapResponse, error) {
-	requestURL := c.baseURL + "/v1/exchange/map"
+	requestURL := "/v1/exchange/map"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
@@ -24,7 +24,7 @@ func (c *client) GetExchangeMap(q url.Values) (*ExchangeMapResponse, error) {
 }
 
 func (c *client) GetExchangeInfo(q url.Values) (*ExchangeInfoResponseWrapper, error) {
-	requestURL := c.baseURL + "/v1/exchange/info"
+	requestURL := "/v1/exchange/info"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {

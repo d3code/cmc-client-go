@@ -6,7 +6,7 @@ import (
 )
 
 func (c *client) GetFiatMap(q url.Values) (*Fiat, error) {
-	requestURL := c.baseURL + "/v1/fiat/map"
+	requestURL := "/v1/fiat/map"
 
 	resBody, err := doGetRequest(requestURL, q, c)
 	if err != nil {
