@@ -7,11 +7,7 @@ import (
 
 var testClient = cmc.Client("").Test(true)
 
-func checkResponse(t *testing.T, err error, status cmc.Status) {
-	if err != nil {
-		t.Error(err)
-	}
-
+func checkResponse(t *testing.T, status cmc.Status) {
 	if status.ErrorCode != 0 {
 		t.Error("Non zero error code in response: ", status.ErrorMessage)
 	}

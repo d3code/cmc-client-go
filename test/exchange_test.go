@@ -8,7 +8,10 @@ import (
 
 func TestGetExchangeMap(t *testing.T) {
 	response, err := testClient.GetExchangeMap(url.Values{})
-	checkResponse(t, err, response.Status)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
 
 	fmt.Println(response)
 }
@@ -18,7 +21,10 @@ func TestGetExchangeInfo(t *testing.T) {
 	values.Add("slug", "eth")
 
 	response, err := testClient.GetExchangeInfo(values)
-	checkResponse(t, err, response.Status)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
 
 	fmt.Println(response)
 }

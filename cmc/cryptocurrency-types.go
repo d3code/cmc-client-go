@@ -24,22 +24,25 @@ type CryptocurrencyAirdrop struct {
 }
 
 type CryptocurrencyAirdrops struct {
-	Data []struct {
-		Id          string `json:"id"`
-		ProjectName string `json:"project_name"`
-		Description string `json:"description"`
-		Status      string `json:"status"`
-		Coin        struct {
-			Id     int    `json:"id"`
-			Name   string `json:"name"`
-			Slug   string `json:"slug"`
-			Symbol string `json:"symbol"`
-		} `json:"coin"`
-		StartDate   time.Time `json:"start_date"`
-		EndDate     time.Time `json:"end_date"`
-		TotalPrize  int64     `json:"total_prize"`
-		WinnerCount int       `json:"winner_count"`
-		Link        string    `json:"link"`
+	Data struct {
+		Data []struct {
+			Id          string `json:"id"`
+			ProjectName string `json:"project_name"`
+			Description string `json:"description"`
+			Status      string `json:"status"`
+			Coin        struct {
+				Id     int    `json:"id"`
+				Name   string `json:"name"`
+				Slug   string `json:"slug"`
+				Symbol string `json:"symbol"`
+			} `json:"coin"`
+			StartDate   time.Time `json:"start_date"`
+			EndDate     time.Time `json:"end_date"`
+			TotalPrize  int       `json:"total_prize"`
+			WinnerCount int       `json:"winner_count"`
+			Link        string    `json:"link"`
+		} `json:"data"`
+		Status Status `json:"status"`
 	} `json:"data"`
 	Status Status `json:"status"`
 }

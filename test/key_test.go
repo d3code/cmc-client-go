@@ -8,7 +8,10 @@ import (
 
 func TestGetKeyInfo(t *testing.T) {
 	response, err := testClient.GetKeyInfo(url.Values{})
-	checkResponse(t, err, response.Status)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
 
 	fmt.Println(response)
 }
