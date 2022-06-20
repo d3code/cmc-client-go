@@ -44,7 +44,7 @@ type ExchangeInfo struct {
 	Status Status `json:"status"`
 }
 
-type ListingsLatest struct {
+type ExchangeListingsLatest struct {
 	Data []struct {
 		Id             int       `json:"id"`
 		Name           string    `json:"name"`
@@ -72,7 +72,7 @@ type ListingsLatest struct {
 	Status Status `json:"status"`
 }
 
-type MarketPairsLatest struct {
+type ExchangeMarketPairsLatest struct {
 	Data struct {
 		Id             int     `json:"id"`
 		Name           string  `json:"name"`
@@ -113,7 +113,7 @@ type MarketPairsLatest struct {
 	Status Status `json:"status"`
 }
 
-type QuotesHistorical struct {
+type ExchangeQuotesHistorical struct {
 	Data struct {
 		Id     int    `json:"id"`
 		Name   string `json:"name"`
@@ -130,7 +130,7 @@ type QuotesHistorical struct {
 	Status Status `json:"status"`
 }
 
-type QuotesLatest struct {
+type ExchangeQuotesLatest struct {
 	Data map[string]struct {
 		Id             int       `json:"id"`
 		Name           string    `json:"name"`
