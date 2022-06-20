@@ -108,3 +108,111 @@ func TestGetCryptocurrencyListingsNew(t *testing.T) {
 
 	fmt.Println(response)
 }
+
+func TestGetCryptocurrencyTrendingGainersLosers(t *testing.T) {
+	response, err := testClient.GetCryptocurrencyTrendingGainersLosers(url.Values{})
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyTrendingLatest(t *testing.T) {
+	response, err := testClient.GetCryptocurrencyTrendingLatest(url.Values{})
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyTrendingMostVisited(t *testing.T) {
+	response, err := testClient.GetCryptocurrencyTrendingMostVisited(url.Values{})
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyMarketPairs(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "1")
+
+	response, err := testClient.GetCryptocurrencyMarketPairs(values)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyOHLCVHistorical(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "1")
+
+	response, err := testClient.GetCryptocurrencyOHLCVHistorical(values)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyOHLCVLatest(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "1")
+
+	response, err := testClient.GetCryptocurrencyOHLCVLatest(values)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyPricePerformanceStats(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "1")
+
+	response, err := testClient.GetCryptocurrencyPricePerformanceStats(values)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyQuotesHistorical(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "1")
+
+	response, err := testClient.GetCryptocurrencyQuotesHistorical(values)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}
+
+func TestGetCryptocurrencyQuotesLatest(t *testing.T) {
+	values := url.Values{}
+	values.Add("id", "1")
+
+	response, err := testClient.GetCryptocurrencyQuotesLatest(values)
+	if err != nil {
+		t.Error(err)
+	}
+	checkResponse(t, response.Status)
+
+	fmt.Println(response)
+}

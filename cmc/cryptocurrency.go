@@ -166,3 +166,165 @@ func (c *client) GetCryptocurrencyListingsNew(q url.Values) (*CryptocurrencyList
 
 	return &cmcResponse, nil
 }
+
+func (c *client) GetCryptocurrencyTrendingGainersLosers(q url.Values) (*CryptocurrencyTrendingGainersLosers, error) {
+	requestURL := "/v1/cryptocurrency/trending/gainers-losers"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyTrendingGainersLosers
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyTrendingLatest(q url.Values) (*CryptocurrencyTrendingLatest, error) {
+	requestURL := "/v1/cryptocurrency/trending/latest"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyTrendingLatest
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyTrendingMostVisited(q url.Values) (*CryptocurrencyTrendingMostVisited, error) {
+	requestURL := "/v1/cryptocurrency/trending/most-visited"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyTrendingMostVisited
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyMarketPairs(q url.Values) (*CryptocurrencyMarketPairsLatest, error) {
+	requestURL := "/v2/cryptocurrency/market-pairs/latest"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyMarketPairsLatest
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyOHLCVHistorical(q url.Values) (*CryptocurrencyOHLCVHistorical, error) {
+	requestURL := "/v2/cryptocurrency/ohlcv/historical"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyOHLCVHistorical
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyOHLCVLatest(q url.Values) (*CryptocurrencyOHLCVLatest, error) {
+	requestURL := "/v2/cryptocurrency/ohlcv/latest"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyOHLCVLatest
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyPricePerformanceStats(q url.Values) (*CryptocurrencyPricePerformanceStats, error) {
+	requestURL := "/v2/cryptocurrency/price-performance-stats/latest"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyPricePerformanceStats
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyQuotesHistorical(q url.Values) (*CryptocurrencyQuotesHistorical, error) {
+	requestURL := "/v2/cryptocurrency/quotes/historical"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyQuotesHistorical
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
+
+func (c *client) GetCryptocurrencyQuotesLatest(q url.Values) (*CryptocurrencyQuotesLatest, error) {
+	requestURL := "/v2/cryptocurrency/quotes/latest"
+
+	resBody, err := doGetRequest(requestURL, q, c)
+	if err != nil {
+		return nil, err
+	}
+
+	var cmcResponse CryptocurrencyQuotesLatest
+
+	unmarshalError := json.Unmarshal(resBody, &cmcResponse)
+	if unmarshalError != nil {
+		return nil, unmarshalError
+	}
+
+	return &cmcResponse, nil
+}
