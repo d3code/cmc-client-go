@@ -78,7 +78,7 @@ func doGetRequest(requestURL string, q url.Values, c *client) ([]byte, error) {
 		return nil, responseError
 	}
 
-	if c.printResponse {
+	if c.printResponse && resBody != nil {
 		responseString := string(resBody)
 		println(responseString)
 	}
