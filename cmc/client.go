@@ -57,6 +57,7 @@ func doGetRequest(requestURL string, q url.Values, c *client) ([]byte, error) {
         request = cmcBaseUrl + requestURL
     }
 
+    println("URL: ", request)
     req, err := http.NewRequest(http.MethodGet, request, nil)
     if err != nil {
         return nil, err
@@ -69,7 +70,6 @@ func doGetRequest(requestURL string, q url.Values, c *client) ([]byte, error) {
     }
 
     req.Header.Set("Accepts", "application/json")
-    req.Header.Set("Accept-Encoding", "deflate, gzip")
     req.URL.RawQuery = q.Encode()
 
     httpClient := http.Client{
@@ -88,7 +88,7 @@ func doGetRequest(requestURL string, q url.Values, c *client) ([]byte, error) {
 
     if c.printResponse && resBody != nil {
         responseString := string(resBody)
-        println(responseString)
+        println("Response: ", responseString)
     }
 
     return resBody, nil
