@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"net/url"
 	"testing"
 	"time"
@@ -15,9 +14,8 @@ func TestGetCryptocurrencyAirdrop(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyAirdrops(t *testing.T) {
@@ -25,9 +23,8 @@ func TestGetCryptocurrencyAirdrops(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyCategories(t *testing.T) {
@@ -35,9 +32,8 @@ func TestGetCryptocurrencyCategories(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyCategory(t *testing.T) {
@@ -48,9 +44,8 @@ func TestGetCryptocurrencyCategory(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyMap(t *testing.T) {
@@ -58,9 +53,8 @@ func TestGetCryptocurrencyMap(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyInfo(t *testing.T) {
@@ -71,9 +65,8 @@ func TestGetCryptocurrencyInfo(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyListingsHistorical(t *testing.T) {
@@ -84,9 +77,8 @@ func TestGetCryptocurrencyListingsHistorical(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyListingsLatest(t *testing.T) {
@@ -94,9 +86,8 @@ func TestGetCryptocurrencyListingsLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyListingsNew(t *testing.T) {
@@ -104,9 +95,8 @@ func TestGetCryptocurrencyListingsNew(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyTrendingGainersLosers(t *testing.T) {
@@ -114,9 +104,8 @@ func TestGetCryptocurrencyTrendingGainersLosers(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyTrendingLatest(t *testing.T) {
@@ -124,9 +113,8 @@ func TestGetCryptocurrencyTrendingLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyTrendingMostVisited(t *testing.T) {
@@ -134,9 +122,8 @@ func TestGetCryptocurrencyTrendingMostVisited(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyMarketPairs(t *testing.T) {
@@ -147,9 +134,8 @@ func TestGetCryptocurrencyMarketPairs(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyOHLCVHistorical(t *testing.T) {
@@ -160,9 +146,8 @@ func TestGetCryptocurrencyOHLCVHistorical(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyOHLCVLatest(t *testing.T) {
@@ -173,9 +158,8 @@ func TestGetCryptocurrencyOHLCVLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyPricePerformanceStats(t *testing.T) {
@@ -186,9 +170,8 @@ func TestGetCryptocurrencyPricePerformanceStats(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyQuotesHistorical(t *testing.T) {
@@ -199,9 +182,8 @@ func TestGetCryptocurrencyQuotesHistorical(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetCryptocurrencyQuotesLatest(t *testing.T) {
@@ -212,7 +194,6 @@ func TestGetCryptocurrencyQuotesLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }

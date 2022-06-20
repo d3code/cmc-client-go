@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"net/url"
 	"testing"
 )
@@ -15,7 +14,6 @@ func TestToolsPriceConversion(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }

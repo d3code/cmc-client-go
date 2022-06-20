@@ -1,7 +1,6 @@
 package test
 
 import (
-	"fmt"
 	"net/url"
 	"testing"
 )
@@ -14,9 +13,8 @@ func TestGetExchangeInfo(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetExchangeMap(t *testing.T) {
@@ -24,9 +22,8 @@ func TestGetExchangeMap(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetExchangeListingsLatest(t *testing.T) {
@@ -34,9 +31,8 @@ func TestGetExchangeListingsLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetExchangeMarketPairsLatest(t *testing.T) {
@@ -47,9 +43,8 @@ func TestGetExchangeMarketPairsLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetExchangeQuotesHistorical(t *testing.T) {
@@ -60,9 +55,8 @@ func TestGetExchangeQuotesHistorical(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
 
 func TestGetExchangeQuotesLatest(t *testing.T) {
@@ -73,7 +67,6 @@ func TestGetExchangeQuotesLatest(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	checkResponse(t, response.Status)
 
-	fmt.Println(response)
+	checkResponse(t, response.Status)
 }
